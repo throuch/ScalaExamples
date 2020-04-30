@@ -14,7 +14,7 @@ val (min, max) = listeDeNombre.tail.foldLeft((listeDeNombre(0), listeDeNombre(0)
                                     if (elem > minmax._2) elem else minmax._2))
 ```
 
-Deuxième façon plus élégante:
+Deuxième façon plus élégante et performante:
 ```
 val (min, max) = listeDeNombre.iterator.map(x => (x, x)).
         reduce((a, b) => (a._1 min b._1, a._2 max b._2))
